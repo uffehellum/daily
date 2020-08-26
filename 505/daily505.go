@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// Rotate an array in place n steps to the right
+
 func main() {
 	a := []int{}
 	for i := 1; i <= 50; i++ {

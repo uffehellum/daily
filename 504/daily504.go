@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+// Keep last n orders.
+// Create api to append order and to retrieve nth last order
+// time and space optimized
 func main() {
 	o := makeLastOrders(2)
 	o.record(7)
