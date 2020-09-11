@@ -9,42 +9,40 @@ type ListNode struct {
 // https://leetcode.com/problems/sort-list/
 
 func sortList(head *ListNode) *ListNode {
-	if head == nil || head.Next == nil {
+	if head == nil {
 		return head
 	}
-	half := findHalf(head)
-	for half != head {
+	var half *ListNode;
+	for {
+		half = findHalf(head, half)
+		if half == head {
+			break
+		}
 		p1 := head
 		p2 := half
-		if p1.Next == half {
-			half = p1
-		}
 		for p2 != nil {
 			if p1.Val > p2.Val {
 				p1.Val, p2.Val = p2.Val, p1.Val
 			}
 			p1 = p1.Next
-			if p1.Next == half {
-				half = p1
-			}
 			p2 = p2.Next
 		}
 	}
 	return head
 }
 
-func findHalf(head *ListNode) *ListNode {
-	p1 := head
-	p2 := head
-	for p2 != nil {
-		p1 = p1.Next
-		p2 = p2.Next
-		if p2 == nil {
-			break
-		}
-		p2 = p2.Next
+func findHalf(head, target *ListNode) *ListNode {
+	i := 0
+	for p := head; p != target; p = p.Next {
+		i++
 	}
-	return p1
+	if i == 1 {
+		return head
+	}
+	for i = (i + 1) / 2; i != 0; i-- {
+		head = head.Next
+	}
+	return head
 }
 
 func println(head *ListNode) {
