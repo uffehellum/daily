@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	for _, x := range (Zigzag("thisisazigzag", 4)) {
+	for _, x := range (Zigzag("thisisazigzag", 3)) {
 		fmt.Println(x)
 	}
 }
