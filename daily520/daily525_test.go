@@ -1,4 +1,4 @@
-package main
+package daily520
 
 import (
 	"encoding/json"

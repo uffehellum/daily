@@ -1,4 +1,4 @@
-package daily529
+package daily520
 
 import (
 	"fmt"

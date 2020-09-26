@@ -1,4 +1,4 @@
-package main
+package daily520
 
 import (
 	"fmt"
@@ -19,7 +19,7 @@ func TestIsValidTree(t *testing.T) {
 }
 
 func assertValidTree(t *testing.T, expected bool, s string) {
-	actual :=IsValidTree(s)
+	actual := IsValidTree(s)
 	if expected == actual {
 		return
 	}
@@ -28,7 +28,7 @@ func assertValidTree(t *testing.T, expected bool, s string) {
 }
 
 func assertFindTreeDepth(t *testing.T, expected int, s string) {
-	actual:=FindTreeDepth(s)
+	actual:= FindTreeDepth(s)
 	if expected == actual {
 		return
 	}
