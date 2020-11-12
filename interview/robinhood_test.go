@@ -5,6 +5,55 @@ import (
 	"sort"
 	"testing"
 )
+ /*
+
+ Codewriting
+
+ You have N types of securities available to buy and for each
+ security i, each has a starting price Pi.
+ Your friend predicts that the stock price will be Si for each
+ associated security.
+ But based on volatility of the market, you only want to buy
+ up to Ai shares of security i.
+
+ Given M dollars to spend, calculate the maximum return you
+ could potentially gain based on the predicted prices Si (and
+ including any cash you have remaining). You can think about
+ this as the final portfolio value according to the predicted
+ prices.
+
+ Assume you are able to buy fractional amounts of shares.
+
+ N = Number of securities
+ Pi = Current Price
+ Si = Expected Future Price
+ Ai = Maximum units you are willing to purchase
+ M = Dollars available to invest
+ --- Sample Input ---
+ current_prices: [15, 20]
+ predicted_prices: [30, 45]
+ max_number_of_units: [3, 3]
+ dollars_to_spend: 30
+
+ AAPL's current price is $15, predicted price is $30, and max units to buy is 3.
+ TSLA current price is $20, predicted price is $45, and max units to buy is 3.
+ We have $30 to spend.
+
+ ---Sample Output---
+ Max portfolio value is $67.5.
+
+ [execution time limit] 4 seconds (go)
+
+ [input] array.float current_prices
+
+ [input] array.float predicted_prices
+
+ [input] array.integer max_number_of_units
+
+ [input] integer dollars_to_spend
+
+ [output] float
+  */
 
 func portfolio_value_optimization(current_prices []float64, predicted_prices []float64, max_number_of_units []int, dollars_to_spend int) float64 {
 	n := len(current_prices)
