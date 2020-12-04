@@ -9,18 +9,15 @@ type node struct{
 
 func TestTree(t *testing.T) {
 	v := &node{
-		10,
-		&node{
-			5,
-			nil,
-			&node{2, nil, nil}},
-		&node{
-			5,
-			nil,
-			&node{
-				1,
-				&node{-1, nil, nil},
-				nil}}}
+		value: 10,
+		left: &node{
+			value: 5,
+			right: &node{value: 2}},
+		right: &node{
+			value: 5,
+			right:&node{
+				value: 1,
+				left: &node{value: -1}}}}
 	actual := minPath(v)
 	assertEqual(t, 15, actual)
 }
